@@ -4,8 +4,8 @@
     <div class="col-12">
         <div class="row">
             <div class="col-3" align="center">
-                <img src="./assets/img/bts.jpg" alt="" class="img"><br><br>
-                <a href="">Cambiar foto del perfil</a>
+                <img src="{{usuario.img}}" alt="" class="img"><br><br>
+                <a [routerLink]="['/editar-perfil']">Cambiar foto del perfil</a>
             </div>
             <div class="col-9">
                     <p class="perfil-titulo" align="center">
@@ -65,7 +65,7 @@
                             <input type="email" class="form-control" value="{{usuario.password}}" disabled/>
                         </div>
                         <div class="col-3" align="center">
-                            <a href="">Cambiar contraseña</a>
+                            <a [routerLink]="['/restaurar']">Cambiar contraseña</a>
                         </div>
                     </div>
             </div>

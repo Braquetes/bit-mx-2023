@@ -78,6 +78,8 @@ export class LoginComponent implements OnInit {
         this.CS.set('correo', data.correo, 1, '/');
         this.CS.set('carrera', data.carrera, 1, '/');
         this.CS.set('celular', data.celular, 1, '/');
+        this.CS.set('img', data.img, 1, '/');
+        this.CS.set('pdf', data.pdf, 1, '/');
         this.CS.set('estatus', data.estatus, 1, '/');
         this.CS.set('perfil', data.perfil, 1, '/');
         this.CS.set('matricula', data.matricula, 1, '/');

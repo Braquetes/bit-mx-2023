@@ -1,3 +1,4 @@
+import { CompletarExternoComponent } from './externo/completar-externo/completar-externo.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CompletarComponent } from './client/completar/completar.component';
@@ -9,14 +10,20 @@ import { PlanesComponent } from './client/planes/planes.component';
 import { ProgramaComponent } from './client/programa/programa.component';
 import { QrComponent } from './client/qr/qr.component';
 import { TalleresComponent } from './client/talleres/talleres.component';
+import { TokenGuard } from './guards/token.guard';
 import { CodigoComponent } from './pages/codigo/codigo.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PasswordComponent } from './pages/password/password.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { RestaurarComponent } from './pages/restaurar/restaurar.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { EditarPerfilComponent } from './client/editar-perfil/editar-perfil.component';
 
 const routes: Routes = [
+  {
+    path: 'editar-perfil',
+    component: EditarPerfilComponent
+  },
   {
     path: 'eleccion',
     component: EleccionComponent
@@ -28,6 +35,10 @@ const routes: Routes = [
   {
     path: 'completar',
     component: CompletarComponent
+  },
+  {
+    path: 'completar-externo',
+    component: CompletarExternoComponent
   },
   {
     path: 'qr',
@@ -75,7 +86,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [TokenGuard]
   },
   {
     path: '',

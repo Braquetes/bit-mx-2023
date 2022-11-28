@@ -59,6 +59,7 @@ export class PasswordComponent implements OnInit {
     this.AS.restaurar(this.miFormulario.value, this.correo).subscribe((data: any) => {
       console.log(data);
       if (data.resultado == 'Actualizado') {
+        this.CS.deleteAll();
         this.router.navigate(['/login']);
       }
     });

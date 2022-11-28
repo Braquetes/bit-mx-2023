@@ -18,6 +18,7 @@ export class PerfilComponent implements OnInit {
     carrera: '',
     matricula: '',
     celular: '',
+    img: '',
     correo: '',
     password: '********'
   };
@@ -31,7 +32,11 @@ export class PerfilComponent implements OnInit {
     this.usuario.carrera = this.CS.get('carrera');
     this.usuario.matricula = this.CS.get('matricula');
     this.usuario.celular = this.CS.get('celular');
+    this.usuario.img = this.CS.get('img');
     this.usuario.correo = this.CS.get('correo');
+
+    console.log(this.usuario);
+    
 
     if (this.usuario.nombre == 'null null null') {
       this.usuario.nombre = 'Completa tu registro'

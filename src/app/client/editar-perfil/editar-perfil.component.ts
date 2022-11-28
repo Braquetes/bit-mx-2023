@@ -5,12 +5,11 @@ import { AuthService } from 'src/app/providers/auth.service';
 import { FilesService } from 'src/app/providers/files.service';
 
 @Component({
-  selector: 'app-metodo',
-  templateUrl: './metodo.component.html',
-  styleUrls: ['./metodo.component.scss']
+  selector: 'app-editar-perfil',
+  templateUrl: './editar-perfil.component.html',
+  styleUrls: ['./editar-perfil.component.scss']
 })
-export class MetodoComponent implements OnInit {
-
+export class EditarPerfilComponent implements OnInit {
   trueimg:Boolean = false;
   loader:Boolean = false;
   myimg = {
@@ -23,13 +22,8 @@ export class MetodoComponent implements OnInit {
 
   constructor(private subir: FilesService, private AS: AuthService, private CS: CookieService, private router: Router) { }
 
-  file(){
-    console.log('file');
-    this.router.navigate(['/eleccion']);
-  }
-
   ngOnInit() {
-    this.msn = "Subir un PDF no mayor de 10MB";
+    this.msn = "Subir una imagen no mayor de 10MB";
     this.id = this.CS.get('id_usuario');
     console.log(this.id);
   }
@@ -49,20 +43,20 @@ export class MetodoComponent implements OnInit {
           if(resp.status){
             this.trueimg = true;
             this.myimg.url = this.url+resp.generatedName;
-            this.CS.delete('pdf');
-            this.CS.set('pdf', this.myimg.url);
-            this.msn = "Correcto";
+            this.CS.delete('img');
+            this.CS.set('img', this.myimg.url);
+            this.msn = "Gracias por visitar unprogramador.com";
             console.log(this.myimg);
-            this.AS.actualizarPDF(this.myimg.url,this.id).subscribe((data: any) => {
+            this.AS.actualizarImagen(this.myimg.url,this.id).subscribe((data: any) => {
               console.log(data);
-              this.router.navigate(['/eleccion']);
+              this.router.navigate(['/perfil']);
             });
             // this.desaparece();
           }
         },
         error => {
           this.loader = false;
-          alert('Supera el tamaño permitido');
+          alert('Imagen supera el tamaño permitido');
           
         }
       );

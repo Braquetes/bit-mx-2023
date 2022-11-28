@@ -49,5 +49,19 @@ export class AuthService {
       `${this.URL}/auth/actualizarRegistro.php`, registro
     );
   }
+  
+  actualizarUsuarioExterno(registro: any): Observable<Request>{
+    return this.http.post<Request>(
+      `${this.URL}/auth/actualizarRegistroExterno.php`, registro
+    );
+  }
+
+  actualizarImagen(url: any, id: any){
+    return this.http.get(`${this.URL}/auth/actualizarImagen.php?id=${id}&url=${url}`);
+  }
+  
+  actualizarPDF(url: any, id: any){
+    return this.http.get(`${this.URL}/auth/actualizarPDF.php?id=${id}&pdf=${url}`);
+  }
 
 }

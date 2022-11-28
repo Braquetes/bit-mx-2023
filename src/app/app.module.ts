@@ -23,7 +23,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CompletarComponent } from './client/completar/completar.component';
 import { MetodoComponent } from './client/metodo/metodo.component';
-import { EleccionComponent } from './client/eleccion/eleccion.component'
+import { EleccionComponent } from './client/eleccion/eleccion.component';
+import { CompletarExternoComponent } from './externo/completar-externo/completar-externo.component';
+import { PerfilExternoComponent } from './externo/perfil-externo/perfil-externo.component';
+import { EditarPerfilComponent } from './client/editar-perfil/editar-perfil.component'
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { EleccionComponent } from './client/eleccion/eleccion.component'
     FooterComponent,
     CompletarComponent,
     MetodoComponent,
-    EleccionComponent
+    EleccionComponent,
+    CompletarExternoComponent,
+    PerfilExternoComponent,
+    EditarPerfilComponent
   ],
   imports: [
     BrowserModule,
