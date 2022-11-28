@@ -31,6 +31,8 @@ $response = new Result( );
         $response->activo = $row['activo'];
         $response->institucion = $row['institucion'];
         $response->celular = $row['celular'];
+        $response->img = $row['img'];
+        $response->pdf = $row['pdf'];
     } 
     
     if($registros->num_rows<1){ 
